@@ -42,8 +42,8 @@ public class SdTableContentConverterPostgreSqlImpl extends SdAbstractTableConten
 	@Override
 	public SdAbstractTableContent newTableContent(SdBean bean) {
 		SdTableContentByPostgreSQL result = new SdTableContentByPostgreSQL();
-		if (super.getSchemas() != null) {
-			result.setSchema(super.getSchemas());
+		if (bean.getSchema() != null && !bean.getSchema().equals("")) {
+			result.setSchema(bean.getSchema());
 		}
 		return result;
 	}
